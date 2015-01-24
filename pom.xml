@@ -5,17 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jundl77.izou.izoustocks</groupId>
-    <artifactId>jundl77.izou.izoustocks.ZipFileManager</artifactId>
+    <artifactId>izoustocks</artifactId>
     <packaging>jar</packaging>
     <version>0.1</version>
     <name>Izou Stocks</name>
 
     <properties>
         <plugin.id>jundl77.izou.izoustocks</plugin.id>
-        <plugin.class>path.to.the.ZipFileManager</plugin.class>
+        <plugin.class>jundl77.izou.izoustocks.ZipFileManager</plugin.class>
         <plugin.version>0.1</plugin.version>
         <plugin.provider>jundl77</plugin.provider>
-        <plugin.dependencies />
+        <plugin.dependencies>leanderk.izou.tts</plugin.dependencies>
+
         <repo.name>izoustocks</repo.name>
         <repo.owner>jundl77</repo.owner>
         <!-- github server corresponds to entry in ~/.m2/settings.xml -->
@@ -33,12 +34,25 @@
             <artifactId>tts</artifactId>
             <version>1.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.yahoofinance-api</groupId>
+            <artifactId>yahoofinance</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
     <repositories>
         <repository>
             <id>Izou</id>
             <url>https://raw.github.com/intellimate/Izou/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>IzouTTS</id>
+            <url>https://raw.github.com/LeanderK/IzouTTS/mvn-repo/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
