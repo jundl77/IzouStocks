@@ -4,6 +4,7 @@ import intellimate.izou.events.Event;
 import intellimate.izou.resource.Resource;
 import intellimate.izou.system.Context;
 import leanderk.izou.tts.outputextension.TTSData;
+import leanderk.izou.tts.outputplugin.TTSOutputPlugin;
 import yahoofinance.Stock;
 
 import java.util.HashMap;
@@ -18,8 +19,15 @@ public class TTSOutputExtension extends leanderk.izou.tts.outputextension.TTSOut
      */
     public static final String ID = TTSOutputExtension.class.getCanonicalName();
 
+    /**
+     * Creates a new OutputExtension for IzouTTS so that it can communicate with the user
+     *
+     * @param context the addOn's context
+     */
     public TTSOutputExtension(Context context) {
         super(ID, context);
+        addResourceIdToWishList(StocksContentGenerator.RESOURCE_ID);
+        this.setPluginId(TTSOutputPlugin.ID);
     }
 
     @Override
@@ -45,7 +53,8 @@ public class TTSOutputExtension extends leanderk.izou.tts.outputextension.TTSOut
 
         String ttsString = "";
         for(String stockName : stocks.keySet()) {
-            ttsString += "The course for " + stockName + " is at " + stocks.get(stockName).getQuote().getPrice() + ". ";
+            ttsString += "The course for " + stockName + " is at " + stocks.get(stockName).getQuote().getPrice() +
+                    stocks.get(stockName).getCurrency() + ". ";
         }
 
         TTSData ttsData = TTSData.createTTSData(ttsString, getLocale(), 0, ID);

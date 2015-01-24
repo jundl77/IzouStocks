@@ -47,6 +47,7 @@ public class StocksContentGenerator extends ContentGenerator {
 
         for (Object keyObj : properties.keySet()) {
             String stockName = (String) keyObj;
+            stockName = stockName.replace("_", " ");
             String ticker = (String) properties.get(keyObj);
             Stock stock = YahooFinance.get(ticker);
 

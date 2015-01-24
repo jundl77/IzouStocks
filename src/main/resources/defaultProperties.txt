@@ -7,4 +7,5 @@
 # StockName = OfficialStockTickerSymbol
 # Example: Google = GOOG
 #          Apple = AAPL
-#          Euro_to_dollar = EURUSD\=X
+#          Euro_to_dollar = EURUSD=X
+# Use underscores instead of spaces. The name of the stock will later be pronounced.
