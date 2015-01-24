@@ -4,20 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId></groupId>
-    <artifactId></artifactId>
+    <groupId>jundl77.izou.izoustocks</groupId>
+    <artifactId>jundl77.izou.izoustocks.ZipFileManager</artifactId>
     <packaging>jar</packaging>
-    <version></version>
-    <name></name>
+    <version>0.1</version>
+    <name>Izou Stocks</name>
 
     <properties>
-        <plugin.id></plugin.id>
+        <plugin.id>jundl77.izou.izoustocks</plugin.id>
         <plugin.class>path.to.the.ZipFileManager</plugin.class>
-        <plugin.version></plugin.version>
-        <plugin.provider></plugin.provider>
+        <plugin.version>0.1</plugin.version>
+        <plugin.provider>jundl77</plugin.provider>
         <plugin.dependencies />
-        <repo.name></repo.name>
-        <repo.owner></repo.owner>
+        <repo.name>izoustocks</repo.name>
+        <repo.owner>jundl77</repo.owner>
         <!-- github server corresponds to entry in ~/.m2/settings.xml -->
         <github.global.server>github</github.global.server>
     </properties>
