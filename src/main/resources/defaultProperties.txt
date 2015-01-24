@@ -9,3 +9,4 @@
 #          Apple = AAPL
 #          Euro_to_dollar = EURUSD=X
 # Use underscores instead of spaces. The name of the stock will later be pronounced.
+# The ticker symbols of the stocks have to be accurate, you can find them on http://finance.yahoo.com/
