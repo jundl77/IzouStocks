@@ -37,7 +37,9 @@ public class StocksAddOn extends AddOn {
 
     @Override
     public ContentGenerator[] registerContentGenerator() {
-        return new ContentGenerator[0];
+        ContentGenerator[] contentGenerators = new ContentGenerator[1];
+        contentGenerators[0] = new StocksContentGenerator(getContext());
+        return contentGenerators;
     }
 
     @Override
@@ -52,6 +54,8 @@ public class StocksAddOn extends AddOn {
 
     @Override
     public OutputExtension[] registerOutputExtension() {
-        return new OutputExtension[0];
+        OutputExtension[] outputExtensions = new OutputExtension[1];
+        outputExtensions[0] = new TTSOutputExtension(getContext());
+        return outputExtensions;
     }
 }

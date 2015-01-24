@@ -1,0 +1,10 @@
+#
+# ------
+# STOCKS
+# ------
+#
+# Put the stocks you would like to get information for below in the form of:
+# StockName = OfficialStockTickerSymbol
+# Example: Google = GOOG
+#          Apple = AAPL
+#          Euro_to_dollar = EURUSD\=X
