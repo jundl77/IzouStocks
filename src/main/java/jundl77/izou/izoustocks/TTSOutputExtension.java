@@ -30,6 +30,17 @@ public class TTSOutputExtension extends leanderk.izou.tts.outputextension.TTSOut
         this.setPluginId(TTSOutputPlugin.ID);
     }
 
+    private String convertCurrency(String currencyShortcut) {
+        switch (currencyShortcut) {
+            case "EUR":
+                return "euros";
+            case "USD":
+                return "dollars";
+            default:
+                return currencyShortcut;
+        }
+    }
+
     @Override
     public TTSData generateSentence(Event event) {
         Resource<StocksFetchedData> resource = null;
@@ -54,7 +65,7 @@ public class TTSOutputExtension extends leanderk.izou.tts.outputextension.TTSOut
         String ttsString = "";
         for(String stockName : stocks.keySet()) {
             ttsString += "The course for " + stockName + " is at " + stocks.get(stockName).getQuote().getPrice() +
-                    stocks.get(stockName).getCurrency() + ". ";
+                    " " + convertCurrency(stocks.get(stockName).getCurrency()) + ". ";
         }
 
         TTSData ttsData = TTSData.createTTSData(ttsString, getLocale(), 0, ID);

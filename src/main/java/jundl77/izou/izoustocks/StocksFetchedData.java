@@ -9,12 +9,21 @@ import java.util.HashMap;
  */
 public class StocksFetchedData {
     private HashMap<String, Stock> stocks;
+    private String soundPath;
 
     /**
      * Creates a new StocksFetchedData object which contains the requested stocks' data
+     *
+     * @param soundName the name of the sound to be played as an announcement noise for the stocks
      */
-    public StocksFetchedData() {
+    public StocksFetchedData(String soundName) {
         this.stocks = new HashMap<>();
+
+        if (soundName != null) {
+            this.soundPath = StocksAddOn.ADDON_DATA_PATH_LOCAL + soundName;
+        } else {
+            this.soundPath = null;
+        }
     }
 
     /**
@@ -34,5 +43,23 @@ public class StocksFetchedData {
      */
     public HashMap<String, Stock> getStocks() {
         return stocks;
+    }
+
+    /**
+     * Gets the path to the sound file to play at the beginning of the stocks output
+     *
+     * @return the path to the sound file
+     */
+    public String getSoundPath() {
+        return soundPath;
+    }
+
+    /**
+     * Sets the path to the sound file to play at the beginning of the stocks output
+     *
+     * @param soundPath the path to the sound file
+     */
+    public void setSoundPath(String soundPath) {
+        this.soundPath = soundPath;
     }
 }

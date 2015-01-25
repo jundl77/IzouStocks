@@ -43,10 +43,16 @@ public class StocksContentGenerator extends ContentGenerator {
 
     private StocksFetchedData grabStocks() {
         Properties properties = getContext().properties.getPropertiesContainer().getProperties();
-        StocksFetchedData fetchedData = new StocksFetchedData();
+        StocksFetchedData fetchedData = new StocksFetchedData(getContext().properties.getPropertiesContainer().
+                getProperties().getProperty("audioFileName"));
 
         for (Object keyObj : properties.keySet()) {
             String stockName = (String) keyObj;
+
+            if (stockName.equals("audioFileName")) {
+                continue;
+            }
+
             stockName = stockName.replace("_", " ");
             String ticker = (String) properties.get(keyObj);
             Stock stock = YahooFinance.get(ticker);

@@ -10,3 +10,12 @@
 #          Euro_to_dollar = EURUSD=X
 # Use underscores instead of spaces. The name of the stock will later be pronounced.
 # The ticker symbols of the stocks have to be accurate, you can find them on http://finance.yahoo.com/
+
+#
+# -----
+# SOUND
+# -----
+#
+# Enter the name of the audio file that is to be used as the announcement noise for the stocks, if null no noise will
+# be used, the audio file has to be in the /resources/IzouStocks folder in Izou
+audioFileName = null

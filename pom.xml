@@ -15,7 +15,7 @@
         <plugin.class>jundl77.izou.izoustocks.ZipFileManager</plugin.class>
         <plugin.version>0.1</plugin.version>
         <plugin.provider>jundl77</plugin.provider>
-        <plugin.dependencies>leanderk.izou.tts</plugin.dependencies>
+        <plugin.dependencies>leanderk.izou.tts, jundl77.izou.izousound</plugin.dependencies>
 
         <repo.name>izoustocks</repo.name>
         <repo.owner>jundl77</repo.owner>
@@ -39,6 +39,11 @@
             <artifactId>yahoofinance</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>jundl77.izou.izousound</groupId>
+            <artifactId>izousound</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <repositories>
@@ -53,6 +58,14 @@
         <repository>
             <id>IzouTTS</id>
             <url>https://raw.github.com/LeanderK/IzouTTS/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>IzouSound</id>
+            <url>https://raw.github.com/jundl77/IzouSound/mvn-repo/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
