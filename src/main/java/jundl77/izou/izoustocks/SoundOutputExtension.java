@@ -37,10 +37,14 @@ public class SoundOutputExtension extends OutputExtension<SoundOutputData> {
                 .get(0)
                 .getResource();
 
-        List<String> paths = new ArrayList<>();
-        paths.add(fetchedData.getSoundPath());
+        if (fetchedData.getSoundPath() != null) {
+            List<String> paths = new ArrayList<>();
+            paths.add(fetchedData.getSoundPath());
 
-        getContext().logger.getLogger().debug("Converted StocksFetchedData resource to a SoundOutputData object");
-        return new SoundOutputData(paths, null, -1, -1);
+            getContext().logger.getLogger().debug("Converted StocksFetchedData resource to a SoundOutputData object");
+            return new SoundOutputData(paths, null, -1, -1);
+        } else {
+            return new SoundOutputData(null, null, -1, -1);
+        }
     }
 }
