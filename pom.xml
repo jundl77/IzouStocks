@@ -27,7 +27,7 @@
         <dependency>
             <groupId>intellimate.izou</groupId>
             <artifactId>Izou</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>leanderk.izou.tts</groupId>
@@ -37,12 +37,18 @@
         <dependency>
             <groupId>com.yahoofinance-api</groupId>
             <artifactId>yahoofinance</artifactId>
-            <version>1.0.1</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>jundl77.izou.izousound</groupId>
             <artifactId>izousound</artifactId>
             <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

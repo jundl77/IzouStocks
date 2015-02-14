@@ -11,6 +11,6 @@ public class Debug {
     public static void main(String[] args) {
         LinkedList<AddOn> addOns = new LinkedList<>();
         addOns.add(new StocksAddOn());
-        Main main = new Main(addOns, true);
+        Main main = new Main(addOns);
     }
 }
