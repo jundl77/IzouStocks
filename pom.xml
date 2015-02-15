@@ -13,7 +13,7 @@
     <properties>
         <plugin.id>jundl77.izou.izoustocks</plugin.id>
         <plugin.class>jundl77.izou.izoustocks.ZipFileManager</plugin.class>
-        <plugin.version>0.1</plugin.version>
+        <plugin.version>1.0.1</plugin.version>
         <plugin.provider>jundl77</plugin.provider>
         <plugin.dependencies>leanderk.izou.tts, jundl77.izou.izousound</plugin.dependencies>
 
