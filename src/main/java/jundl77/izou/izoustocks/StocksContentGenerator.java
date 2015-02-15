@@ -45,18 +45,18 @@ public class StocksContentGenerator extends ContentGenerator {
         Properties properties = getContext().properties.getPropertiesContainer().getProperties();
         StocksFetchedData fetchedData = new StocksFetchedData(getContext().properties.getPropertiesContainer().
                 getProperties().getProperty("audioFileName"));
-        List<String> tickers = new ArrayList<>();
+        Map<String, String> tickers = new HashMap<>();
         for (String stockName : properties.stringPropertyNames()) {
             if (stockName.equals("audioFileName")) {
                 continue;
             }
             String ticker = (String) properties.get(stockName);
-            tickers.add(ticker);
+            tickers.put(ticker, stockName);
         }
-        Map<String, Stock> stocks = YahooFinance.get(tickers.toArray(new String[tickers.size()]));
+        Map<String, Stock> stocks = YahooFinance.get(tickers.keySet().toArray(new String[tickers.size()]));
         for (Map.Entry<String, Stock> entry : stocks.entrySet()) {
             if (entry.getValue() != null) {
-                fetchedData.addStock(entry.getKey().replace("_", " "), entry.getValue());
+                fetchedData.addStock(tickers.get(entry.getKey()).replace("_", " "), entry.getValue());
             } else {
                 getContext().logger.getLogger().debug("Request to get " + entry.getKey() + " from Yahoo Finance failed");
             }

@@ -7,6 +7,8 @@ import leanderk.izou.tts.outputextension.TTSData;
 import leanderk.izou.tts.outputplugin.TTSOutputPlugin;
 import yahoofinance.Stock;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -41,6 +43,14 @@ public class TTSOutputExtension extends leanderk.izou.tts.outputextension.TTSOut
         }
     }
 
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
+
     @Override
     public TTSData generateSentence(Event event) {
         Resource<StocksFetchedData> resource = null;
@@ -64,8 +74,9 @@ public class TTSOutputExtension extends leanderk.izou.tts.outputextension.TTSOut
 
         String ttsString = "";
         for(String stockName : stocks.keySet()) {
-            ttsString += "The course for " + stockName + " is at " + stocks.get(stockName).getQuote().getPrice() +
-                    " " + convertCurrency(stocks.get(stockName).getCurrency()) + ". ";
+            ttsString += "The course for " + stockName + " is at " +
+                    round(stocks.get(stockName).getQuote().getPrice(), 2) + " " +
+                    convertCurrency(stocks.get(stockName).getCurrency()) + ". ";
         }
 
         TTSData ttsData = TTSData.createTTSData(ttsString, getLocale(), 0, ID);
