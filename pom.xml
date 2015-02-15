@@ -7,7 +7,7 @@
     <groupId>jundl77.izou.izoustocks</groupId>
     <artifactId>izoustocks</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <name>Izou Stocks</name>
 
     <properties>
